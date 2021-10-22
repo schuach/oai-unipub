@@ -1,3 +1,11 @@
+# data, logs, etc.
+data/
+log/
+journals.txt
+
+# notes etc
+notes.org
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

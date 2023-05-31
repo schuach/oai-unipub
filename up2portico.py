@@ -3,6 +3,7 @@ import logging
 from logging import config
 import os
 from datetime import datetime
+import shutil
 import sys
 
 from oaiharvest.harvest import main as harvest
@@ -112,6 +113,7 @@ def main():
             fetch_pdf(directories)
         if "all" in args.operation or "make_zip" in args.operation:
             make_zip(directories, journal)
+            shutil.rmtree(directories["HARVEST_DIR"], ignore_errors=True)
         if "all" in args.operation or "send_ftp" in args.operation:
             send_to_ftp(directories)
 

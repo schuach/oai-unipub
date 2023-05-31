@@ -13,7 +13,7 @@ def get_filename(mods_path, journal):
         # git VLID from filename because it's not in the metadata.
         vlid = re.findall(r'(\d+)', mods_path)[-1]
 
-        filename = f"{journal}_{date.today().isoformat()}_{vlid}"
+        filename = f"{journal}_VLID{vlid}_{date.today().isoformat()}"
     except Exception as e:
         logging.error(f"Could not get filename for {os.path.basename(mods_path)}: {e}")
         filename = None

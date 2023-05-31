@@ -111,7 +111,7 @@ def main():
         if "all" in args.operation or "get_pdf" in args.operation:
             fetch_pdf(directories)
         if "all" in args.operation or "make_zip" in args.operation:
-            make_zip(directories)
+            make_zip(directories, journal)
         if "all" in args.operation or "send_ftp" in args.operation:
             send_to_ftp(directories)
 

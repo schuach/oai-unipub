@@ -2,13 +2,20 @@
 
 import os
 import shutil
+from sys import platform
 import re
 import logging
 import requests
 
 
+
 def download_pdf(filename, directories):
-    vlid = re.search(r':([0-9]+)\.mods\.xml', filename).groups()[0]
+    if platform == "win32":
+        separator = "%3A"
+    else:
+        separator = ":"
+    vlid = re.search(separator + r'([0-9]+)\.mods\.xml', filename).groups()[0]
+    print(vlid)
     url = f"https://unipub.uni-graz.at/download/pdf/{vlid}"
 
     pdfname = filename[:-3] + "pdf"

@@ -1,8 +1,8 @@
 import argparse
 import logging
+from logging import config
 import os
 from datetime import datetime
-from logging import config
 import sys
 
 from oaiharvest.harvest import main as harvest
